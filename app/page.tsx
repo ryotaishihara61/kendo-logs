@@ -2,6 +2,9 @@
 import { Client } from '@notionhq/client';
 import KendoList from '@/components/KendoList';
 
+// 動的レンダリングを強制（リクエストごとにNotion APIから最新データを取得）
+export const dynamic = 'force-dynamic';
+
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID!;
 
